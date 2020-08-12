@@ -2,6 +2,9 @@
     "name": "javascriptpage",
     "version": "0.0.0",
     "description": "JSP:JavaScriptPage",
+    "keywords": [
+        "jsp"
+    ],
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
@@ -18,5 +21,9 @@
     "bugs": {
         "url": "https://gihub.com/myyrakle/REAL_JSP/issues"
     },
-    "homepage": "https://github.com/myyrakle/REAL_JSP#readme"
+    "homepage": "https://github.com/myyrakle/REAL_JSP#readme",
+    "dependencies": {
+        "app-root-path": "^3.0.0",
+        "express": "^4.17.1"
+    }
 }
