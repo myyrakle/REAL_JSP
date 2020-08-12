@@ -1,0 +1,22 @@
+{
+    "name": "javascriptpage",
+    "version": "0.0.0",
+    "description": "JSP:JavaScriptPage",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/myyrakle/REAL_JSP.git"
+    },
+    "author": {
+        "name": "myyrakle",
+        "email": "sssang97@naver.com"
+    },
+    "license": "MIT",
+    "bugs": {
+        "url": "https://gihub.com/myyrakle/REAL_JSP/issues"
+    },
+    "homepage": "https://github.com/myyrakle/REAL_JSP#readme"
+}
