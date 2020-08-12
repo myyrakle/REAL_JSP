@@ -1,2 +1,1 @@
-# REAL_JSP
-Java Script Page
+# Java Script Page
