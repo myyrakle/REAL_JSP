@@ -17,18 +17,18 @@ app.set("view engine", "ejs");
 const fs = require("fs");
 const path = require("path");
 
-function getFiles(dir) {
-  const subdirs = fs.readdirSync(dir);
+async function getFiles(dir) {
+  const subdirs = await fs.readdir(dir);
   const files = subdirs.map((subdir) => {
     const res = path.resolve(dir, subdir);
-    return fs.statSync(res).isDirectory() ? getFiles(res) : res;
+    return (await fs.stat(res)).isDirectory() ? getFiles(res) : res;
   });
 
   return files.reduce((a, f) => a.concat(f), []);
 }
 
 app.start = async () => {
-  getFiles(app.PAGE_PATH).forEach((filename) => {
+  (await getFiles(app.PAGE_PATH)).forEach((filename) => {
     const PATH = path.relative(app.ROOT_PATH, filename).replace(/\\/g, `/`);
 
     app.get(PATH, (req, res) => {
