@@ -1,31 +1,31 @@
 {
-  "name": "javascriptpage",
-  "version": "0.0.0",
-  "description": "JSP:JavaScriptPage",
-  "keywords": [
-    "jsp"
-  ],
-  "main": "index.js",
-  "scripts": {
-    "test": "nodemon ./test.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/myyrakle/REAL_JSP.git"
-  },
-  "author": {
-    "name": "myyrakle",
-    "email": "sssang97@naver.com"
-  },
-  "license": "MIT",
-  "bugs": {
-    "url": "https://gihub.com/myyrakle/REAL_JSP/issues"
-  },
-  "homepage": "https://github.com/myyrakle/REAL_JSP#readme",
-  "dependencies": {
-    "app-root-path": "^3.0.0",
-    "ejs": "^3.1.3",
-    "express": "^4.17.1",
-    "node-dir": "^0.1.17"
-  }
+    "name": "javascriptpage",
+    "version": "0.1.0",
+    "description": "JSP:JavaScriptPage",
+    "keywords": [
+        "jsp"
+    ],
+    "main": "index.js",
+    "scripts": {
+        "test": "nodemon ./test.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/myyrakle/REAL_JSP.git"
+    },
+    "author": {
+        "name": "myyrakle",
+        "email": "sssang97@naver.com"
+    },
+    "license": "MIT",
+    "bugs": {
+        "url": "https://gihub.com/myyrakle/REAL_JSP/issues"
+    },
+    "homepage": "https://github.com/myyrakle/REAL_JSP#readme",
+    "dependencies": {
+        "app-root-path": "^3.0.0",
+        "ejs": "^3.1.3",
+        "express": "^4.17.1",
+        "node-dir": "^0.1.17"
+    }
 }
