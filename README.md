@@ -20,4 +20,7 @@ jsp.port = 3333;
 jsp.start();
 ```
 
-then,
+Then, as the server starts up, a public directory and a page directory will be created.
+
+The page directory is the path to the page sources. All .ejs files entered here are automatically registered in the URL.
+The public directory is where static files such as js and css files are stored.
