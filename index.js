@@ -36,7 +36,7 @@ async function getFiles(dir) {
 }
 
 app.start = async () => {
-    app.init();
+    await app.init();
     (await getFiles(app.PAGE_PATH)).forEach((filename) => {
         const PATH = path.relative(app.ROOT_PATH, filename).replace(/\\/g, `/`);
 
