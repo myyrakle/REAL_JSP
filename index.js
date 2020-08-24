@@ -7,13 +7,14 @@ const path = require("path");
 const statAsync = util.promisify(fs.stat);
 const readdirAsync = util.promisify(fs.readdir);
 
-const { PAGE_PATH, PUBLIC_PATH, ROOT_PATH } = require("./init");
+const { PAGE_PATH, PUBLIC_PATH, ROOT_PATH, init } = require("./init");
 
 const app = express();
 
 app.PAGE_PATH = PAGE_PATH;
 app.PUBLIC_PATH = PUBLIC_PATH;
 app.ROOT_PATH = ROOT_PATH;
+app.init = init;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -35,6 +36,7 @@ async function getFiles(dir) {
 }
 
 app.start = async () => {
+    app.init();
     (await getFiles(app.PAGE_PATH)).forEach((filename) => {
         const PATH = path.relative(app.ROOT_PATH, filename).replace(/\\/g, `/`);
 

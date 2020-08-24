@@ -1,9 +1,11 @@
 {
     "name": "javascriptpage",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "description": "JSP:JavaScriptPage",
     "keywords": [
-        "jsp"
+        "jsp",
+        "server",
+        "backend"
     ],
     "main": "index.js",
     "scripts": {
