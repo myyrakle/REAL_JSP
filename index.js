@@ -52,6 +52,21 @@ app.start = async () => {
         app.put(PATH, (req, res) => {
             res.render(filename, { method: "put", request: req.body });
         });
+
+        if (PATH === "/index.ejs") {
+            app.get("/", (req, res) => {
+                res.render(filename, { method: "get", request: req.query });
+            });
+            app.post("/", (req, res) => {
+                res.render(filename, { method: "post", request: req.body });
+            });
+            app.delete("/", (req, res) => {
+                res.render(filename, { method: "delete", request: req.query });
+            });
+            app.put("/", (req, res) => {
+                res.render(filename, { method: "put", request: req.body });
+            });
+        }
     });
 
     const port = app.port || 12345;

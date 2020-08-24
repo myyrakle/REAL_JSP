@@ -1,6 +1,6 @@
 # Java Script Page
 
-![](https://img.shields.io/badge/language-Javascript-red) ![](https://img.shields.io/badge/version-0.2.4-brightgreen) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/myyrakle/REAL_JSP/blob/master/LICENSE)
+![](https://img.shields.io/badge/language-Javascript-red) ![](https://img.shields.io/badge/version-0.2.5-brightgreen) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/myyrakle/REAL_JSP/blob/master/LICENSE)
 
 ##
 
@@ -12,7 +12,7 @@ npm install --save javascriptpage
 
 ##
 
-And you can use it like this
+And you can start with: Import the module, set the port, and start with the start method.
 
 ```
 const jsp = require("javascriptpage");
