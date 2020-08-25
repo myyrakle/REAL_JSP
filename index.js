@@ -35,6 +35,38 @@ async function getFiles(dir) {
     return files.reduce((a, f) => a.concat(f), []);
 }
 
+app.use((req, res, next) => {
+    req._headerRequest = {
+        parameter: req.query,
+        queryParameter: req.query,
+        namedRouteParameter: req.params,
+        method: req.method,
+        baseUrl: req.baseUrl,
+        originalUrl: req.originalUrl,
+        path: req.path,
+        isHttps: req.secure,
+        subdomain: req.subdomain,
+        hostname: req.hostname,
+        ip: req.ip,
+    };
+
+    req._bodyRequest = {
+        parameter: req.body,
+        queryParameter: req.query,
+        namedRouteParameter: req.params,
+        method: req.method,
+        baseUrl: req.baseUrl,
+        originalUrl: req.originalUrl,
+        path: req.path,
+        isHttps: req.secure,
+        subdomain: req.subdomain,
+        hostname: req.hostname,
+        ip: req.ip,
+    };
+
+    next();
+});
+
 app.start = async () => {
     await app.init();
     (await getFiles(app.PAGE_PATH)).forEach((filename) => {
@@ -48,30 +80,48 @@ app.start = async () => {
         const PATH = pathTextArray.join("");
 
         app.get(PATH, (req, res) => {
-            res.render(filename, { method: "get", request: req.query });
+            res.render(filename, {
+                method: "get",
+                request: req._headerRequest,
+            });
         });
         app.post(PATH, (req, res) => {
-            res.render(filename, { method: "post", request: req.body });
+            res.render(filename, { method: "post", request: req._bodyRequest });
         });
         app.delete(PATH, (req, res) => {
-            res.render(filename, { method: "delete", request: req.query });
+            res.render(filename, {
+                method: "delete",
+                request: req._headerRequest,
+            });
         });
         app.put(PATH, (req, res) => {
-            res.render(filename, { method: "put", request: req.body });
+            res.render(filename, { method: "put", request: req._bodyRequest });
         });
 
         if (PATH === "/index.ejs") {
             app.get("/", (req, res) => {
-                res.render(filename, { method: "get", request: req.query });
+                res.render(filename, {
+                    method: "get",
+                    request: req._headerRequest,
+                });
             });
             app.post("/", (req, res) => {
-                res.render(filename, { method: "post", request: req.body });
+                res.render(filename, {
+                    method: "post",
+                    request: req._bodyRequest,
+                });
             });
             app.delete("/", (req, res) => {
-                res.render(filename, { method: "delete", request: req.query });
+                res.render(filename, {
+                    method: "delete",
+                    request: req._headerRequest,
+                });
             });
             app.put("/", (req, res) => {
-                res.render(filename, { method: "put", request: req.body });
+                res.render(filename, {
+                    method: "put",
+                    request: req._bodyRequest,
+                });
             });
         }
     });
