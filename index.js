@@ -38,7 +38,14 @@ async function getFiles(dir) {
 app.start = async () => {
     await app.init();
     (await getFiles(app.PAGE_PATH)).forEach((filename) => {
-        const PATH = path.relative(app.ROOT_PATH, filename).replace(/\\/g, `/`);
+        const pathTextArray = String(
+            path.relative(app.ROOT_PATH, filename).replace(/\\/g, `/`)
+        ).split("");
+        const word = pathTextArray.indexOf("/");
+        for (let i = 0; i < word; i++) {
+            pathTextArray.shift();
+        }
+        const PATH = pathTextArray.join("");
 
         app.get(PATH, (req, res) => {
             res.render(filename, { method: "get", request: req.query });
