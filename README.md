@@ -1,6 +1,6 @@
 # Java Script Page
 
-![](https://img.shields.io/badge/language-Javascript-red) ![](https://img.shields.io/badge/version-0.3.0-brightgreen) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/myyrakle/REAL_JSP/blob/master/LICENSE)
+![](https://img.shields.io/badge/language-Javascript-red) ![](https://img.shields.io/badge/version-0.3.1-brightgreen) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/myyrakle/REAL_JSP/blob/master/LICENSE)
 
 ##
 
@@ -26,7 +26,7 @@ Then, as the server starts up, a public directory and a page directory will be c
 
 ![](https://raw.githubusercontent.com/myyrakle/REAL_JSP/master/public/init.png)
 
-The page directory is the path to the page sources. All .ejs files entered here are automatically registered in the URL.
+The page directory is the path to the page sources. All .ejs files entered here are automatically registered in the URL.  
 The public directory is where static files such as js and css files are stored.
 
 ##
@@ -59,3 +59,5 @@ jsp.get("/foo", (req, res) => res.json({ msg: "boom" }));
 
 jsp.start();
 ```
+
+However, it is not recommended to use. Pages are the best.
